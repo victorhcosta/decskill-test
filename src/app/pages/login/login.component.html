@@ -1,0 +1,38 @@
+<main class="min-vw-100 min-vh-100 container-fluid main d-flex flex-column justify-content-center">
+  <header class="row text-center mb-4">
+    <h1>
+      Seja bem vindo
+    </h1>
+  </header>
+  <section class="row">
+    <form class="d-flex align-items-center flex-column" (submit)="submit()" [formGroup]="loginForm">
+      <span class="col-12 col-md-3">
+        <label class="form-label" for="userName">Qual seu nome?</label>
+        <input
+          class="form-control"
+          id="userName"
+          formControlName="username"
+        />
+      </span>
+      <span class="col-12 col-md-3 mt-4 mb-4">
+        <label class="form-label" for="color">Cor de fundo</label>
+	   <select (change)="setColor($event)" formControlName="color">
+		<option *ngFor="let color of colors" [value]="color" [ngStyle]="{'background-color': color}">
+			{{ color }}
+		</option>
+	   </select>
+        <p class="form-text">
+          Cor de fundo para suas notas e avatar
+        </p>
+      </span>
+	 <p class="form-text text-danger" *ngIf="showErrorMessage">
+	   Informe seu nome e selecione uma cor.
+	 </p>
+      <div class="col-12 col-md-3 d-grid">
+        <button class="btn btn-primary">
+          Entrar
+        </button>
+      </div>
+    </form>
+  </section>
+</main>

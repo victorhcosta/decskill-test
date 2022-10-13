@@ -1,0 +1,21 @@
+.username {
+	display: center;
+	width: 40px;
+	height: 40px;
+	background: rgb(155, 136, 177);
+	border-radius: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	min-height: 50px;
+}
+
+.btn-danger {
+	.img {
+		width: 25px !important;
+	}
+}

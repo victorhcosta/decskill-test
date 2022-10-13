@@ -1,0 +1,20 @@
+<div class="mt-2">
+	<div class="d-flex flex-column mb-2" [ngStyle]="{'background-color': note.background}" *ngFor="let note of notes$ | async">
+		<span class="d-flex justify-content-between px-2 py-1 mb-2">
+			<p class="mb-0 d-flex gap-2 align-items-center text-white">
+				<span class="username" aria-hidden="true">
+					{{ note.username[0] | uppercase }}
+				</span>
+				<span>
+					{{ note.username }}
+					<br />
+					{{ note.date | date:'dd/MM/yyyy hh:mm:ss' }}
+				</span>
+			</p>
+			<button class="btn btn-danger btn-sm" (click)="removeNote(note)">
+				<img class="img" src="/assets/svg/trash.svg" alt="Deletar nota" />
+			</button>
+		</span>
+		<p class="content text-white p-2" arua> {{ note.content }} </p>
+	</div>
+</div>

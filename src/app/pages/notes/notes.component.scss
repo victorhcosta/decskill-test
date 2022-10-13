@@ -1,0 +1,41 @@
+.container {
+	width: 100vw;
+
+	@media (min-width: 768px) {
+		display: grid;
+		grid-template-areas: "start-blank main end-blank";
+		grid-template-columns: 1fr 1.5fr 1fr;
+	}
+
+	min-height: 100vh;
+}
+
+.main {
+	grid-area: main;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 5px 10px;
+	background-color: #ccdbb2;
+	align-items: center;
+}
+
+.textbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top: 10px;
+}
+
+.btn-danger {
+	.img {
+		width: 25px !important;
+	}
+}

@@ -1,0 +1,24 @@
+<div class="" [formGroup]="noteForm">
+	<textarea
+		class="textarea"
+		placeholder="O que está pensando?"
+		rows="5"
+		cols="5"
+		formControlName="note"
+		(focus)="toggleCounter(true)"
+		(blur)="toggleCounter(false)"
+		(input)="change()"
+	>
+	</textarea>
+	<div class="d-flex p-1" [ngClass]="{'justify-content-between': showCounter, 'justify-content-end': !showCounter}">
+		<span [ngClass]="{'text-danger': canSave}" *ngIf="showCounter">
+			{{ counter }}
+		</span>
+
+		<span class="">
+			<button class="btn btn-primary rounded-3" (click)="saveNote()" [disabled]="canSave">
+				salvar
+			</button>
+		</span>
+	</div>
+</div>

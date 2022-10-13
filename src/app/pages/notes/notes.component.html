@@ -1,0 +1,17 @@
+<div class="container">
+  <main class="main">
+    <header class="header">
+      <h1>
+        Seja bem vindo {{ userName }}
+      </h1>
+	 <button class="btn btn-danger btn-sm" (click)="logout()">
+		<img class="img" src="/assets/svg/logout.svg" alt="Deletar nota" />
+	</button>
+    </header>
+
+    <app-textbox class="textbox"></app-textbox>
+
+    <app-timeline></app-timeline>
+  </main>
+
+</div>
